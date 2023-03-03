@@ -11,7 +11,7 @@ with open('model/label.txt', 'r') as f:
     labels = [l.rstrip() for l in f]
 
 # model_path = 'model/zen-net-224.onnx'
-model_path = 'model/mobilenetV2.onnx'
+model_path = 'model/mobilenetV3.onnx'
 model = onnx.load(model_path)
 session = ort.InferenceSession(model.SerializeToString())
 
