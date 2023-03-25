@@ -1,4 +1,4 @@
-from flask import Flask,request,render_template
+from flask import Flask,request,render_template, jsonify
 from onnx_classifier import *
 
 app = Flask(__name__)
@@ -14,8 +14,11 @@ def home():
         img_data = data_json["image"]
         response = predict(img_data)
         response = list(response)
-        # print(response)
-        return 'class={} ; probability={}'.format(response[0], response[1])
+        response = {
+                    "class"         : response[0],
+                    "probability"   : str(response[1]),
+                    }
+        return jsonify(response)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000, host='127.0.0.1')
