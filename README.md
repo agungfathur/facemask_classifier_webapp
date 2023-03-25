@@ -7,7 +7,7 @@ Tested and Run in Python 3.8.10
 
 Installation
 
-1. git clone https://github.com/agungfathur/facemask_webapp.git
+1. git clone https://github.com/agungfathur/facemask_classifier_webapp.git
 2. cd facemask_webapp
 3. Please install virtualenv for clean pip install library (recommendation) && dont forget to turn on the virtualenv
 4. install dependencies --> **pip install -r requirements.txt**
