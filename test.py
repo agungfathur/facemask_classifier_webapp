@@ -6,7 +6,7 @@ import numpy as np
 import requests
 
 #select one image that want to classify
-# img = "0_incorrect_mask.jpg"
+# img = "0_incorrect_mask2.jpg"
 # img = "1_using_mask.jpg"
 img = "2_without_mask.jpg"
 
@@ -19,6 +19,6 @@ payload = {
 }
 
 response = requests.post("http://127.0.0.1:5000/classify_mask", headers={"Content-Type":"application/json"}, data=json.dumps(payload))
-response_dict = response.text
+response_dict = json.loads(response.text)
 
 print(response_dict)
